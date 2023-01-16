@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ExampleSql</string>
+    <string name="Actividad">Nombre Actividad</string>
+    <string name="action_settings">Settings</string>
+    <string name="Descripcion">Descripción Actividad</string>
+    <string name="Importe">Importe Actividad</string>
+    <string name="insert">Insertar</string>
+    <string name="update">Actualizar</string>
+    <string name="delete">Borrar</string>
+    <string name="txtid">Id.</string>
+    <string name="btnquery">Consulta</string>
+</resources>

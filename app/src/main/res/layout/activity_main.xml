@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/txtid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtid"
+        android:textSize="15sp"
+        android:ems="5"/>
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@id/txtid" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtActividad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/id"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/id"
+        android:text="@string/Actividad"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/actividad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtActividad"
+        android:layout_below="@id/txtActividad"
+        android:inputType="textPersonName" >
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Descripcion"
+        android:layout_below="@id/actividad"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtDescripcion"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/txtImporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Importe"
+        android:layout_below="@id/descripcion"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/importe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtImporte"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btninsert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/importe"
+        android:layout_below="@id/importe"
+        android:layout_marginTop="14dp"
+        android:text="@string/insert" />
+
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btninsert"
+        android:layout_alignBottom="@id/btninsert"
+        android:layout_centerHorizontal="true"
+        android:text="@string/update" />
+
+    <Button
+        android:id="@+id/btndelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnquery"
+        android:layout_toRightOf="@+id/btnupdate"
+        android:text="@string/delete" />
+
+    <Button
+        android:id="@+id/btnquery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/btninsert"
+        android:layout_below="@id/btninsert"
+        android:layout_marginTop="14dp"
+        android:text="@string/btnquery" />
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btnquery">
+
+        <ListView
+            android:id="@+id/lstResultado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp" >
+        </ListView>
+    </ScrollView>
+
+
+</RelativeLayout>
