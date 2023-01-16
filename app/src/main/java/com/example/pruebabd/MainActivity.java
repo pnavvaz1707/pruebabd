@@ -126,14 +126,25 @@ public class MainActivity extends AppCompatActivity {
                 //Cursor c = db.rawQuery(" SELECT * FROM Actividades WHERE id=?", args);
 
 
-                String[] campos = new String[]{"id", "Nombre", "Descripcion"};
+//                String[] campos = new String[]{"id", "Nombre", "Descripcion"};
 
 //                Cursor c = db.query("Actividades", campos, "id=?", new String[]{codigo.getText().toString()}, null, null, null);
 //                Cursor c = db.query("Actividades", campos, null,null, null, null, null);
-                Cursor c = db.rawQuery("SELECT rowid _id,* from Actividades",null);
+                Cursor c1 = db.rawQuery("SELECT rowid _id,* from Actividades", null);
+                if (c1.moveToFirst()) {
+                    //Recorremos el cursor hasta que no haya m�s registros
+                    do {
+                        System.out.println("----> " + c1.getString(0) + " " + c1.getString(1) + " " + c1.getString(2));
+                        System.out.println("/////////////////////////");
+                    } while(c1.moveToNext());
+                }
 
-                String[] names = new String[]{"id", "Nombre", "Descripcion", "Importe"};
-                SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(MainActivity.this, R.layout.list_resultados, c, names, new int[]{R.id.resultado_id,R.id.resultado_nombre,R.id.resultado_descripcion,R.id.resultado_importe}, 0);
+                Cursor c = db.rawQuery("SELECT rowid _id,* from Actividades", null);
+
+                String[] datos = new String[]{"id", "Nombre", "Descripcion", "Importe"};
+                int[] referencias = new int[]{R.id.resultado_id, R.id.resultado_nombre, R.id.resultado_descripcion, R.id.resultado_importe};
+
+                SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(MainActivity.this, R.layout.list_resultados, c, datos,referencias , 0);
                 lstResultado.setAdapter(simpleCursorAdapter);
 
 
