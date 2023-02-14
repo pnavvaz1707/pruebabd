@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Abrimos la base de datos 'BDActividades' en modo escritura
-                ActividadSQliteHelper acdbh = new ActividadSQliteHelper(actividad.getContext(), "BDActividades", null, 1);
+                ActividadSQliteHelper acdbh = new ActividadSQliteHelper(btnconsulta.getContext(), "BDActividades", null, 1);
                 SQLiteDatabase db = acdbh.getWritableDatabase();
 
 
